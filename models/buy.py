@@ -3,9 +3,6 @@ from .base import Base
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import String, ForeignKey
 
-from client import Client
-from buy_book import BuyBook
-from buy_step import BuyStep
 
 
 class Buy(Base):
@@ -15,6 +12,6 @@ class Buy(Base):
     buy_description: Mapped[str] = mapped_column(String, nullable=False)
     client_id: Mapped[int] = mapped_column(ForeignKey("client.client_id"), nullable=False)
 
-    client: Mapped[Client] = relationship(back_populates="buys")
-    buy_books: Mapped[list[BuyBook]] = relationship(back_populates="buy")
-    buy_steps: Mapped[list[BuyStep]] = relationship(back_populates="buy")
+    client: Mapped["Client"] = relationship(back_populates="buys")
+    buy_books: Mapped[list["BuyBook"]] = relationship(back_populates="buy")
+    buy_steps: Mapped[list["BuyStep"]] = relationship(back_populates="buy")

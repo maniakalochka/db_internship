@@ -3,7 +3,7 @@ from .base import Base
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import String
 
-from client import Client
+
 
 class City(Base):
     __tablename__ = "city"
@@ -12,4 +12,4 @@ class City(Base):
     name_city: Mapped[str] = mapped_column(String, nullable=False)
     days_delivery: Mapped[int] = mapped_column(nullable=False)
 
-    clients: Mapped[list[Client]] = relationship(back_populates="city")
+    clients: Mapped[list["Client"]] = relationship(back_populates="city")

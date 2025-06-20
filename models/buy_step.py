@@ -4,8 +4,7 @@ from .base import Base
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import ForeignKey
 
-from buy import Buy
-from step import Step
+
 
 class BuyStep(Base):
     __tablename__ = "buy_step"
@@ -16,5 +15,5 @@ class BuyStep(Base):
     date_step_beg: Mapped[Date] = mapped_column(nullable=False)
     date_step_end: Mapped[Date] = mapped_column(nullable=True)
 
-    buy: Mapped[Buy] = relationship(back_populates="buy_steps")
-    step: Mapped[Step] = relationship(back_populates="buy_steps")
+    buy: Mapped["Buy"] = relationship(back_populates="buy_steps")
+    step: Mapped["Step"] = relationship(back_populates="buy_steps")

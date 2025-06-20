@@ -2,9 +2,7 @@ from __future__ import annotations
 from .base import Base
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import String, ForeignKey
-from genre import Genre
-from author import Author
-from buy_book import BuyBook
+
 
 class Book(Base):
     __tablename__ = "book"
@@ -16,6 +14,6 @@ class Book(Base):
     price: Mapped[int] = mapped_column(nullable=False)
     amount: Mapped[int] = mapped_column(nullable=False)
 
-    author: Mapped[Author] = relationship(back_populates="books")
-    genre: Mapped[Genre] = relationship(back_populates="books")
-    buy_books: Mapped[list[BuyBook]] = relationship(back_populates="book")
+    author: Mapped["Author"] = relationship(back_populates="books")
+    genre: Mapped["Genre"] = relationship(back_populates="books")
+    buy_books: Mapped[list["BuyBook"]] = relationship(back_populates="book")

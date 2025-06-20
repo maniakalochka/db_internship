@@ -2,8 +2,7 @@ from __future__ import annotations
 from .base import Base
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import ForeignKey
-from book import Book
-from buy import Buy
+
 
 class BuyBook(Base):
     __tablename__ = "buy_book"
@@ -13,5 +12,5 @@ class BuyBook(Base):
     book_id: Mapped[int] = mapped_column(ForeignKey("book.book_id"), nullable=False)
     amount: Mapped[int] = mapped_column(nullable=False)
 
-    buy: Mapped[Buy] = relationship(back_populates="buy_books")
-    book: Mapped[Book] = relationship(back_populates="buy_books")
+    buy: Mapped["Buy"] = relationship(back_populates="buy_books")
+    book: Mapped["Book"] = relationship(back_populates="buy_books")
