@@ -1,7 +1,9 @@
 from __future__ import annotations
-from .base import Base
+
+from sqlalchemy import ForeignKey, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy import String, ForeignKey
+
+from .base import Base
 
 
 class Book(Base):
@@ -9,7 +11,9 @@ class Book(Base):
 
     book_id: Mapped[int] = mapped_column(primary_key=True)
     title: Mapped[str] = mapped_column(String, nullable=False)
-    author_id: Mapped[int] = mapped_column(ForeignKey("author.author_id"), nullable=False)
+    author_id: Mapped[int] = mapped_column(
+        ForeignKey("author.author_id"), nullable=False
+    )
     genre_id: Mapped[int] = mapped_column(ForeignKey("genre.genre_id"), nullable=False)
     price: Mapped[int] = mapped_column(nullable=False)
     amount: Mapped[int] = mapped_column(nullable=False)

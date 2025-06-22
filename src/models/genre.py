@@ -1,7 +1,9 @@
 from __future__ import annotations
-from .base import Base
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+
 from sqlalchemy import String
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+
+from .base import Base
 
 
 class Genre(Base):

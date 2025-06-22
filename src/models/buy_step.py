@@ -1,9 +1,11 @@
 from __future__ import annotations
-from datetime import date as Date
-from .base import Base
-from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy import ForeignKey
 
+from datetime import date as Date
+
+from sqlalchemy import ForeignKey
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+
+from .base import Base
 
 
 class BuyStep(Base):
