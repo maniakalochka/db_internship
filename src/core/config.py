@@ -12,6 +12,6 @@ class Settings(BaseSettings):
     DB_URL: str
 
     class Config:
-        env_file = Path(__file__).resolve().parents[1] / ".env"
+        env_file = env_path
 
 settings = Settings()  #type: ignore
