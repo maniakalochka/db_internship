@@ -2,9 +2,9 @@
 
 **Необходимые зависимости:**
 
-- Python 3.13+
-- Poetry version 2.1.1+
-- PostgreSQL 15+
+- Python 3.12+
+- Poetry 2+
+- PostgreSQL
 
 ---
 

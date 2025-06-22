@@ -2,17 +2,15 @@
 name = "db-internship"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Maniakalochka",email = "prochorwolochoff@gmail.com"}
-]
+authors = [{ name = "Maniakalochka", email = "prochorwolochoff@gmail.com" }]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "sqlalchemy (>=2.0.41,<3.0.0)",
     "psycopg2 (>=2.9.10,<3.0.0)",
     "pydantic-settings (>=2.9.1,<3.0.0)",
     "black (>=25.1.0,<26.0.0)",
-    "isort (>=6.0.1,<7.0.0)"
+    "isort (>=6.0.1,<7.0.0)",
 ]
 
 
