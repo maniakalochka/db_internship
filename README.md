@@ -19,7 +19,10 @@ DB_URL=postgresql+psycopg2://postgres:password@localhost:5432/db_internship
 
 ```bash
 git clone https://github.com/maniakalochka/db_internship.git
-cd db_internship/src
+cd db_internship
+poetry install
+source $(poetry env info --path)/bin/activate
+cd src
 python3 main.py
 ```
 
