@@ -15,7 +15,7 @@ CREATE DATABASE db_internship;
 GRANT ALL PRIVILEGES ON DATABASE db_internship TO postgres;
 ```
 
-2. Затем создаем .env файл в корне проекта с содержимым:
+2. Затем создаем `.env` файл в корне проекта с содержимым:
 
 ```dotenv
 DB_URL=postgresql+psycopg2://postgres:password@localhost:5432/db_internship
