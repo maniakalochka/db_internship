@@ -20,7 +20,3 @@ engine = create_engine(
 )
 # Session Factory
 SessionLocal = sessionmaker(autocommit=False, autoflush=True, bind=engine)
-
-
-def init_db() -> None:
-    Base.metadata.create_all(bind=engine)

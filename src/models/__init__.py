@@ -7,3 +7,4 @@ from .city import City
 from .client import Client
 from .genre import Genre
 from .step import Step
+from .base import Base
