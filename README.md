@@ -28,8 +28,8 @@ git clone https://github.com/maniakalochka/db_internship.git
 cd db_internship
 poetry install
 . $(poetry env info --path)/bin/activate
-cd src
-python3 main.py
+alembic revision --autogenerate -m "Create all tables"
+alembic upgrade head
 ```
 
 4. Смотрим результат в БД:
